@@ -1,6 +1,6 @@
 Feature:  user should de able to log in
 
-  @wip
+
   Scenario Outline: verify user login with valid credentials
     Given  user on the login page  "http://qa3.trycloud.net/index.php/login?clear=1"
     When user enter valid username "<username>" and password "<password>"
