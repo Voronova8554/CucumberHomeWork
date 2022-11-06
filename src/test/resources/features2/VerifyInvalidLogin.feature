@@ -3,7 +3,7 @@ Feature: user should NOT be able to log in.
 
   Scenario Outline: Verify user login fail with invalid credentials
 
-    Given  user on the login page  "http://qa3.trycloud.net/index.php/login?clear=1"
+    Given  user on the login page
     When user enter invalid "<username>" and "<password>"
     And user click the login button
     Then verify "<message>" message should be displayed

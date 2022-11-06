@@ -25,10 +25,12 @@ public class VerifyMainModules_StepDef {
     public void verify_the_user_see_the_following_modules(List<String> expectedListOfModules) {
 
         List<String> actualListOfModules = new ArrayList<>();
+
         for (WebElement module : basePage.modules) {
-            if(actualListOfModules.size() < expectedListOfModules.size()){
-                actualListOfModules.add(module.getAttribute("aria-label"));
+            if(actualListOfModules.size() == expectedListOfModules.size()){
+                break;
             }
+            actualListOfModules.add(module.getAttribute("aria-label"));
         }
         Assert.assertEquals("modules Failed!",expectedListOfModules,actualListOfModules);
     }
