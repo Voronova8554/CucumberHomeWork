@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.List;
+
 public class FilePage {
     public FilePage(){
         PageFactory.initElements(Driver.getDriver(), this);
@@ -44,5 +46,8 @@ public class FilePage {
 
     @FindBy(xpath = "(//div[@class='message'])[2]")
     public WebElement postMessageText;
+
+    @FindBy(xpath = "//table[@id='filestable']//tbody//tr/td//input")
+    public List<WebElement> allCheckBox;
 
 }

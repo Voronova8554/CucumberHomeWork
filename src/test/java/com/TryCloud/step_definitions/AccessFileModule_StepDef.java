@@ -9,6 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.WebElement;
 
 public class AccessFileModule_StepDef {
 
@@ -41,9 +42,16 @@ public class AccessFileModule_StepDef {
     public void user_click_the_top_left_checkbox_of_the_table() {
 
         filePage.leftTopCheckBox.click();
+      //  Thread.sleep(3000);
     }
     @Then("verify all the files are selected")
     public void verify_all_the_files_are_selected() {
 
+
+        for (WebElement allCheckBox : filePage.allCheckBox) {
+          Assert.assertTrue("Not all of them is selected!",allCheckBox.isSelected());
+
+            }
+        }
     }
-}
+
