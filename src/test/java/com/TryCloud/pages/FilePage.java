@@ -19,8 +19,8 @@ public class FilePage {
     @FindBy(xpath = "//a[.='Favorites']")
     public WebElement favoritesBtn;
 
-    @FindBy (xpath = "(//span[@class='icon icon-more'])[4]")
-    public WebElement threeDot;
+    @FindBy (xpath = "//a[@class='action action-menu permanent']")
+    public List<WebElement> threeDot;
 
 
     @FindBy(xpath = "//span[.='Add to favorites']")
@@ -50,4 +50,18 @@ public class FilePage {
     @FindBy(xpath = "//table[@id='filestable']//tbody//tr/td//input")
     public List<WebElement> allCheckBox;
 
+    @FindBy(xpath ="//table[@id='filestable']//tbody//tr" )
+    public List<WebElement> allRowOfTheTable;
+
+    @FindBy(xpath = "//div[@class='viewcontainer has-comments']//table//tbody//tr")
+    public List<WebElement> allRowAfterInFavorite;
+
+    @FindBy(xpath = "//span[.='Remove from favorites'] ")
+    public WebElement removeFromFavorite;
+
+    @FindBy(xpath = "//a[@class='button new']")
+    public WebElement addIcon;
+
+    @FindBy(xpath = "//label[@for='file_upload_start']")
+    public WebElement uploadFile;
 }
