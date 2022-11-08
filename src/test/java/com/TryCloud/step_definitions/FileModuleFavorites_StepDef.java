@@ -14,13 +14,18 @@ FilePage filePage = new FilePage();
     @When("user choose the {string} option")
     public void user_choose_the_option(String string) {
 
+        filePage.AddToFavorite.click();
+
     }
     @When("user click the {string} sub-module on the left side")
     public void user_click_the_sub_module_on_the_left_side(String string) {
 
+        filePage.favoritesBtn.click();
     }
     @Then("Verify the chosen file is listed on the table")
     public void verify_the_chosen_file_is_listed_on_the_table() {
 
+        System.out.println("filePage.ExpectedFavorite.getText() = " + filePage.ExpectedFavorite.getAttribute("data-file"));
+        System.out.println("filePage.ExpectedFavorite.getText() = " + filePage.actualFavorite.getAttribute("data-file"));
     }
 }

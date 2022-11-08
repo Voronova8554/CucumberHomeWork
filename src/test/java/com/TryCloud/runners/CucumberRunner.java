@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         plugin = {"html:target/cucumber-report.html",
         "me.jvt.cucumber.report.PrettyReports:target/cucumber",
                 "rerun:target/rerun.txt"},
-        features = "src/test/resources/features2",
+        features = "src/test/resources/features02",
         glue = "com/TryCloud/step_definitions", // package
         dryRun = false,
         tags = "@wip"

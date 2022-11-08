@@ -1,4 +1,4 @@
-@wip
+
 Feature: user I should be able to access to Files module - Favorites button
 
   Scenario: Verify users to add files to Favorites
