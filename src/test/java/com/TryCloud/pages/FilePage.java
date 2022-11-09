@@ -62,6 +62,6 @@ public class FilePage {
     @FindBy(xpath = "//a[@class='button new']")
     public WebElement addIcon;
 
-    @FindBy(xpath = "//label[@for='file_upload_start']")
+    @FindBy(xpath = "//input[@type='file']")
     public WebElement uploadFile;
 }

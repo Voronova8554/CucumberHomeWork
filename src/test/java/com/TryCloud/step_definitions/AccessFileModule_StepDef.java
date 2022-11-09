@@ -20,7 +20,7 @@ public class AccessFileModule_StepDef {
     @Given("user on the dashboard page")
     public void user_on_the_dashboard_page() {
         tryCloudLoginPage.setUpURL();
-        tryCloudLoginPage.login(ConfigurationReader.getProperty("username"), ConfigurationReader.getProperty("password"));
+        tryCloudLoginPage.login(ConfigurationReader.getProperty("username2"), ConfigurationReader.getProperty("password2"));
         String actualTitle = Driver.getDriver().getTitle();
         String expectedTitle = "Dashboard";
         Assert.assertTrue(actualTitle.contains(expectedTitle));

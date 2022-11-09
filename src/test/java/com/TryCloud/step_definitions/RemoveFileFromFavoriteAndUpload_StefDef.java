@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
 public class RemoveFileFromFavoriteAndUpload_StefDef {
@@ -23,8 +24,6 @@ public class RemoveFileFromFavoriteAndUpload_StefDef {
 
         expectedAnFavorite = filePage.allRowOfTheTable.get(numOfRow).getAttribute("data-file");
         filePage.removeFromFavorite.click();
-
-
     }
 
     @Then("Verify that the file is removed from the Favorites sub-module’s table")
@@ -46,16 +45,22 @@ public class RemoveFileFromFavoriteAndUpload_StefDef {
         filePage.addIcon.click();
     }
     @When("users uploads file with the “upload file” option")
-    public void users_uploads_file_with_the_upload_file_option() {
+    public void users_uploads_file_with_the_upload_file_option() throws InterruptedException {
 
-        filePage.uploadFile.click();
-       // filePage.uploadFile.sendKeys("/Users/alenavoronova/Desktop/SDLC_AGILE_TESTING_Interview_Preparations_Questions_V3__1.docx_1.pdf");
+        filePage.uploadFile.sendKeys("/Users/alenavoronova/Desktop/Hello.txt");
+          Thread.sleep(3000);
+
     }
     @Then("verify the file is displayed on the page")
     public void verify_the_file_is_displayed_on_the_page() {
 
     }
-
+/*
+User story about uploading file step:
+1-  you will click '+' sign
+2- you will locate Upload file and you will use sendKeys method to send pathOfFile
+3- you will use explicit wait until id="uploadprogressbar" is invisible.
+ */
 
 
 }
