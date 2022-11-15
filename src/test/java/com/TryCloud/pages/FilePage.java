@@ -64,4 +64,13 @@ public class FilePage {
 
     @FindBy(xpath = "//input[@type='file']")
     public WebElement uploadFile;
+
+    @FindBy(xpath = "(//a[@class='menuitem'])[1]")
+    public WebElement NewFolderBtn;
+
+    @FindBy(xpath = "//input[@id='view13-input-folder']")
+    public WebElement NewFolderInputBox;
+
+    @FindBy (xpath = "//form[@class='filenameform']//input[@type='submit']")
+    public WebElement SubmitBtn;
 }

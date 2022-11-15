@@ -12,6 +12,7 @@ public class RemoveFileFromFavoriteAndUpload_StefDef {
     FilePage filePage = new FilePage();
     String expectedAnFavorite = "";
     int numOfRow = 0;
+    String expectedUpload = "";
     @When("the users click action-icon from any file on the page to remove")
     public void the_users_click_action_icon_from_any_file_on_the_page_to_remove() {
 
@@ -42,18 +43,31 @@ public class RemoveFileFromFavoriteAndUpload_StefDef {
     @When("the user clicks the add icon on the top")
     public void the_user_clicks_the_add_icon_on_the_top() {
 
+        //
         filePage.addIcon.click();
     }
     @When("users uploads file with the “upload file” option")
     public void users_uploads_file_with_the_upload_file_option() throws InterruptedException {
 
-        filePage.uploadFile.sendKeys("/Users/alenavoronova/Desktop/Hello.txt");
-          Thread.sleep(3000);
+        expectedUpload = "/Users/alenavoronova/Desktop/Hello.txt";
+        Thread.sleep(2000);
+        filePage.uploadFile.sendKeys(expectedUpload);
+          Thread.sleep(7000);
 
     }
     @Then("verify the file is displayed on the page")
     public void verify_the_file_is_displayed_on_the_page() {
 
+        boolean checkFile = false;
+        String actualUploadFile = "";
+        for (WebElement each : filePage.allRowOfTheTable) {
+           actualUploadFile =  each.getAttribute("data-file");
+            if(expectedUpload.contains(actualUploadFile)){
+               checkFile = true;
+               break;
+            }
+        }
+             Assert.assertTrue(checkFile);
     }
 /*
 User story about uploading file step:
