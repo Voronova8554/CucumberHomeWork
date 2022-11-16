@@ -35,6 +35,7 @@ public class AccessFileModule_StepDef {
     public void verify_the_page_title_is(String expectedTitle) {
         String actualTitle = Driver.getDriver().getTitle();
         Assert.assertEquals("Failed Title", expectedTitle,actualTitle);
+        System.out.println(actualTitle);
     }
 
 
