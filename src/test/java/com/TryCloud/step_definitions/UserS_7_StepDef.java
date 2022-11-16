@@ -52,11 +52,10 @@ public class UserS_7_StepDef {
                 checkFile = true;
                 break;
             }
-
-        }
+  }
         BrowserUtils.sleep(2);
 
-        System.out.println(actual+" "+inputFolderName);
+        System.out.println(actual + " " + inputFolderName);
         Assert.assertTrue("uploaded file does not appear in the file website",checkFile);
 
     }

@@ -4,7 +4,7 @@ Feature: user should be able to remove files from the favorites and upload a fil
     Background:
     Given user on the dashboard page
     When the user clicks the "Files" module
-  @wip
+
   Scenario: Verify users can add the folder
 
     And the user clicks the add icon on the top

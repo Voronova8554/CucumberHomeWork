@@ -73,4 +73,10 @@ public class FilePage {
 
     @FindBy (xpath = "//form[@class='filenameform']//input[@type='submit']")
     public WebElement SubmitBtn;
+
+    @FindBy(xpath = "//a[@data-action='Delete']")
+    public WebElement DeleteBtn;
+
+    @FindBy (xpath = "//a[.='Deleted files']")
+    public WebElement DeleteLeftModule;
 }
