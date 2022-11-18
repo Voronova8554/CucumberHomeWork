@@ -48,4 +48,5 @@ public class BasePage {
     @FindBy(xpath = "//*[@id='appmenu']//li[@data-id='deck']//a")
     public WebElement deck;
 
+
 }
