@@ -1,5 +1,5 @@
 Feature: user, should be able to search any item/ users from the homepage.
-@wip
+
   Scenario: Verify users can search any files/folder/users from the search box.
 
     Given user on the dashboard page

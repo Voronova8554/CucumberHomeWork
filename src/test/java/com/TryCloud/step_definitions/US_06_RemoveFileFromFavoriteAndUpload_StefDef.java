@@ -1,14 +1,14 @@
 package com.TryCloud.step_definitions;
 
 import com.TryCloud.pages.FilePage;
+import com.TryCloud.utilities.BrowserUtils;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-public class RemoveFileFromFavoriteAndUpload_StefDef {
+public class US_06_RemoveFileFromFavoriteAndUpload_StefDef {
     FilePage filePage = new FilePage();
     String expectedAnFavorite = "";
     int numOfRow = 0;
@@ -23,6 +23,7 @@ public class RemoveFileFromFavoriteAndUpload_StefDef {
     @And("user choose the -Remove from favorites- option")
     public void userChooseTheRemoveFromFavoritesOption() {
 
+        BrowserUtils.sleep(4);
         expectedAnFavorite = filePage.allRowOfTheTable.get(numOfRow).getAttribute("data-file");
         filePage.removeFromFavorite.click();
     }
@@ -43,7 +44,6 @@ public class RemoveFileFromFavoriteAndUpload_StefDef {
     @When("the user clicks the add icon on the top")
     public void the_user_clicks_the_add_icon_on_the_top() {
 
-        //
         filePage.addIcon.click();
     }
     @When("users uploads file with the “upload file” option")
@@ -56,8 +56,9 @@ public class RemoveFileFromFavoriteAndUpload_StefDef {
 
     }
     @Then("verify the file is displayed on the page")
-    public void verify_the_file_is_displayed_on_the_page() {
+    public void verify_the_file_is_displayed_on_the_page() throws InterruptedException {
 
+        Thread.sleep(5000);
         boolean checkFile = false;
         String actualUploadFile = "";
         for (WebElement each : filePage.allRowOfTheTable) {
