@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features02",
         glue = "com/TryCloud/step_definitions", // package
         dryRun = false,
-        tags = "@wip"
+        tags = "@us11"
 
 )
 public class CucumberRunner {
